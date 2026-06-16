@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+.taskList {
+  display: grid;
+  grid-template-columns: 200px 150px 100px 100px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.inputBox,
+.taskInput,
+.dateInput {
+  display: grid;
+  grid-template-columns: 200px 150px 200px;
+  align-items: stretch;
+  margin-right: 10px;
+  font-size: 15px;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+.strikeThrough{
+  display: grid;
+  grid-template-columns: 200px 150px 100px 100px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  text-decoration: line-through;
+}
+.addTaskButton {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+.delete-btn {
+  background-color: darkred;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 6px 6px;
+  font-size: 15px;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+.done-btn {
+  background-color: #108366;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 6px 6px;
+  font-size: 15px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.did-it {
+  background-color: #094e3d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 6px 6px;
+  font-size: 15px;
+  margin-right: 10px;;
+  border-radius: 10px;
+}
