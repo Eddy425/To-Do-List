@@ -5,10 +5,12 @@ body {
 .taskList {
   display: grid;
   grid-template-columns: 200px 150px 100px 100px;
+  height: fit-content;
   margin-right: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
   align-items: center;
+
 }
 .inputBox,
 .taskInput,
@@ -23,13 +25,8 @@ body {
 }
 
 .strikeThrough{
-  display: grid;
-  grid-template-columns: 200px 150px 100px 100px;
-  margin-right: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  align-items: center;
   text-decoration: line-through;
+  opacity: 60%;
 }
 .addTaskButton {
   background-color: #4CAF50;
