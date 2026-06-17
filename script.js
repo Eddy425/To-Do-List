@@ -3,22 +3,15 @@ displayTasks();
 
 function displayTasks(){
   let taskHTML = '';
-
-  for (let i = 0; i < todoList.length; i++){
-    const task = todoList[i];
-    const name = task.name;
-    const date = task.date;
-    
+  todoList.forEach(function(task, index)
+  {const {name, date} = task;
     taskHTML += 
-      `
-      <div class="taskString">${name}</div>
-      <div class="taskString">${date}</div>
-      <button onclick="markAsDone(${i})" class="js-done-btn done-btn">Done</button>
-      <button onclick="todoList.splice(${i},1);
-      displayTasks();" class="js-delete-btn delete-btn">Delete</button>
-      `;
-
-  }
+      `<div class="taskString js-taskName-${index}">${name}</div>
+      <div class="taskString js-taskDate-${index}">${date}</div>
+      <button onclick="markAsDone(${index})" class="js-done-btn-${index} done-btn">Done</button>
+      <button onclick="todoList.splice(${index},1); displayTasks();" class="js-delete-btn delete-btn">Delete</button>
+      `;}
+  );
   document.querySelector('.js-taskList').innerHTML = taskHTML;
 }
 
@@ -37,15 +30,20 @@ function addTask(){
   displayTasks();
 }
 
-function markAsDone(){
-  const doneBtn = document.querySelector('.js-done-btn');
+function markAsDone(index){
+  const doneBtn = document.querySelector(`.js-done-btn-${index}`);
+  const taskName = document.querySelector(`.js-taskName-${index}`);
+  const taskDate = document.querySelector(`.js-taskDate-${index}`);
+
   if (doneBtn.innerHTML === 'Done') {
     doneBtn.innerHTML = 'Did it';
-    document.querySelector('.js-done-btn').classList.add('did-it');
-    document.querySelector('.taskString').classList.add('strikeThrough');
-  } else if (doneBtn.innerHTML === 'Did it') {
+    doneBtn.classList.add('did-it');
+    taskName.classList.add('strikeThrough');
+    taskDate.classList.add('strikeThrough');
+  } else {
     doneBtn.innerHTML = 'Done';
-    document.querySelector('.js-done-btn').classList.remove('did-it');
-    document.querySelector('.taskString').classList.remove('strikeThrough');
+    doneBtn.classList.remove('did-it');
+    taskName.classList.remove('strikeThrough');
+    taskDate.classList.remove('strikeThrough');
   }
 }
